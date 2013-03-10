@@ -21,7 +21,7 @@ function loginForm(thisform) {
 function Login() { 
 if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") { 
 	if (xmlHttp.responseText != "sorry"){
-		//alert (xmlHttp.responseText);
+		alert (xmlHttp.responseText);
 		localStorage.setItem('UserID',xmlHttp.responseText);
 		$.mobile.changePage('http://www.airhorndesign.com/m_igotdibs/index.html#main', { transition: 'none'} );
 		getUser();
