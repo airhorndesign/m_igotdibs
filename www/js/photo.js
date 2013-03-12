@@ -26,7 +26,7 @@ function uploadPhoto(imageURI) {
 	options.params = params;
 	options.chunkedMode = false;
 	var ft = new FileTransfer();
-	ft.upload(imageURI, "http://airhorndesign.com/m_igotdibs/upload.php", win, fail, options);
+	ft.upload(imageURI, encodeURI("http://airhorndesign.com/m_igotdibs/upload.php"), win, fail, options);
 }
 function win(r) {
 	console.log("Code = " + r.responseCode);
