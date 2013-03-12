@@ -18,10 +18,10 @@ navigator.camera.getPicture(uploadPhoto, function(message) {
 function uploadPhoto(imageURI) {
 	var options = new FileUploadOptions();
 	options.fileKey="file";
-	options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1)+'.jpg';
-	options.mimeType="text/plain";
+	options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+	options.mimeType="image/jpeg";
 	var params = new Object();
-	
+
 	options.params = params;
 	options.chunkedMode = false;
 	var ft = new FileTransfer();
