@@ -21,8 +21,7 @@ function uploadPhoto(imageURI) {
 	options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1)+'.jpg';
 	options.mimeType="text/plain";
 	var params = new Object();
-	params.value1 = "test";
-	params.value2 = "param";
+	
 	options.params = params;
 	options.chunkedMode = false;
 	var ft = new FileTransfer();
