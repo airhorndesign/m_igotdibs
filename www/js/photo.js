@@ -9,9 +9,20 @@ function getImage() {
 navigator.camera.getPicture(uploadPhoto, function(message) {
 	alert('get picture failed');
 	},{
-	quality: 50,
+	quality: 20,
 	destinationType: navigator.camera.DestinationType.FILE_URI,
 	sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+	}
+	);
+}
+function takePic() {
+// Retrieve image file location from specified source
+navigator.camera.getPicture(uploadPhoto, function(message) {
+	alert('get picture failed');
+	},{
+	quality: 20,
+	destinationType: navigator.camera.DestinationType.FILE_URI,
+	sourceType: navigator.camera.PictureSourceType.CAMERA
 	}
 	);
 }
