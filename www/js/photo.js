@@ -22,7 +22,9 @@ navigator.camera.getPicture(uploadPhoto, function(message) {
 	},{
 	quality: 20,
 	destinationType: navigator.camera.DestinationType.FILE_URI,
-	sourceType: navigator.camera.PictureSourceType.CAMERA
+	sourceType: navigator.camera.PictureSourceType.CAMERA,
+	allowEdit : true,
+	encodingType: navigator.camera.EncodingType.JPEG
 	}
 	);
 }
