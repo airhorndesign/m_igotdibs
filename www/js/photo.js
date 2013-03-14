@@ -60,7 +60,7 @@ function takePicture() {
             // Specify transfer options
             var options = new FileUploadOptions();
             options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1)+'.jpg';
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
             options.chunkedMode = false;
 
