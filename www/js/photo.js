@@ -17,7 +17,7 @@ function takePicture() {
                 console.log("Error getting picture: " + e);
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
-            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI});
+            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI,encodingType: Camera.EncodingType.JPEG});
     };
 
 
@@ -30,14 +30,14 @@ function takePicture() {
                 var img = document.getElementById('camera_image');
                 img.style.visibility = "visible";
                 img.style.display = "block";
-                img.src = uri+'.jpg';
+                img.src = uri;
                 document.getElementById('camera_status').innerHTML = "Success";
             },
             function(e) {
                 console.log("Error getting picture: " + e);
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
-            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY});
+            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,encodingType: Camera.EncodingType.JPEG});
     };
     
     /**
