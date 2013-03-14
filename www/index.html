@@ -40,8 +40,14 @@
         <div id="feedback">
         </div>
         <!-- Camera -->
-        <button onclick="getImage();">Upload from gallery</button>
-        <button onclick="takePic();">Take a picture</button>
+        <input type="button" onclick="takePicture();" value="Take Picture" /><br/>
+        <input type="button" onclick="selectPicture();" value="Select Picture from Library" /><br/>
+        <input type="button" onclick="uploadPicture();" value="Upload Picture" />
+        	<div>
+			<h3>Camera:</h3>
+			<b>Status:</b> <span id="camera_status"></span><br>
+       		 <b>Image:</b> <img style="width:120px;visibility:hidden;display:none;" id="camera_image" src="" />
+			</div>
     </div> <!-- end of content -->
 </div> <!-- END OF LOGIN PAGE -->
 
