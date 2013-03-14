@@ -54,7 +54,7 @@ function takePicture() {
         }
         
         // Verify server has been entered
-        server = "http://airhorndesign.com/m_igotdibs/upload.php";
+        server = encodeURI("http://airhorndesign.com/m_igotdibs/upload.php");
         if (server) {
         
             // Specify transfer options
