@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.airhorndesign.i-got-gibs"
         version   = "2.2.0">
-    <name>The Table Source</name>
+    <name>I Got Dibs</name>
 
     <description>
         I Got Dibs is a marketplace for DJs and record collectors. This app allows users to upload photos wirelessly to their items for sale on the website.
