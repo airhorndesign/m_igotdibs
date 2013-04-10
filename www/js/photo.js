@@ -24,7 +24,7 @@ function takePicture() {
     /**
 * Select picture from library
 */
-    function selectPicture() {
+    function selectPicture(pic) {
         navigator.camera.getPicture(
             function(uri) {
                 var img = document.getElementById('camera_image');
@@ -38,13 +38,13 @@ function takePicture() {
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
             { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM, encodingType: navigator.camera.EncodingType.JPEG});
-		$('#upload_btn').attr('onclick','uploadSelectedPicture();');
+		$('#upload_btn').attr('onclick','uploadSelectedPicture('+pic+');');
     };
     
     /**
 * Upload current picture
 */
-    function uploadPicture() {
+    function uploadPicture(pic) {
     
      // Get URI of picture to upload
 	 	$('#upload_btn').attr('disabled',true);
@@ -59,7 +59,7 @@ function takePicture() {
         }
 
         // Verify server has been entered
-        server = encodeURI("http://airhorndesign.com/m_igotdibs/upload.php");
+        server = encodeURI("http://airhorndesign.com/igotdibs/addimagesMobile.php?id="+pic);
         if (server) {
         
             // Specify transfer options

@@ -38,17 +38,50 @@ function getUser() {
 			document.getElementById('feedback').innerHTML =  '<h3>Welcome back ' + data.user[i].uname + '</h3>';
 		}
 		for(var j=0;j<data.items.length;j++){
-			document.getElementById('itemlist').innerHTML += '<li><a href="#details" onClick="getOne(\'' + data.items[j].itemID + '\');" data-icon="arrow-r" data-transition="slide"><img src="http://airhorndesign.com/igotdibs/items/' + data.items[j].image + '" /><p>' + data.items[j].brand + ' - ' + data.items[j].model + '</p></a></li>';
+			document.getElementById('itemlist').innerHTML += '<li><a href="#details" onClick="getOne(\'' + data.items[j].itemID + '\');" data-icon="arrow-r" data-transition="slide"><img src="http://airhorndesign.com/igotdibs/items/' + data.items[j].image + '" /><p>' + data.items[j].brand + '</p><p>' + data.items[j].model + '</p></a></li>';
 		}
 		for(var h=0;h<data.records.length;h++){
-			document.getElementById('recordlist').innerHTML += '<li><a href="#details" onClick="getOne(\'' + data.records[h].artistID + '\');" data-icon="arrow-r" data-transition="slide"><p>' + data.records[h].artist + ' - ' + data.records[h].album + '</p></a></li>';
+			document.getElementById('recordlist').innerHTML += '<li><a href="#details" onClick="getOneR(\'' + data.records[h].artistID + '\');" data-icon="arrow-r" data-transition="slide"><img src="http://airhorndesign.com/igotdibs/items/' + data.records[h].image + '" /><p>' + data.records[h].artist + '</p><p>' + data.records[h].album + '</p></a></li>';
 		}
 		$('#itemlist').listview('refresh');	
 		$('#recordlist').listview('refresh');
 	});
 }
 
-function getOne() {
+function getOne(itemID) {
+	$.getJSON("http://www.airhorndesign.com/m_igotdibs/getOne.php?id="+itemID, function(data){ 
+		document.getElementById('item-feedback').innerHTML = '';
+		for(var j=0;j<data.items.length;j++){
+			document.getElementById('item-feedback').innerHTML = '<h2>' + data.items[j].brand + ' - ' + data.items[j].model + '</h2><p><strong>Model Number: </strong>' + data.items[j].modelnum + '</p><p><strong>Year: </strong>' + data.items[j].year + '</p><p><strong>Additional: </strong>' + data.items[j].additional + '</p><p><strong>Price: </strong>' + data.items[j].price + '</p>';
+		}
+		for(var h=0;h<data.images.length;h++){
+			document.getElementById('item-feedback').innerHTML += '<p><img src="http://airhorndesign.com/igotdibs/items/'  + data.images[h].imagesfull + '" /></p>';
+		}
+		for(var j=0;j<data.items.length;j++){
+			document.getElementById('item-feedback').innerHTML += '<input type="button" id="takePic" onclick="takePicture();" value="Take Picture" /><br/>' +
+        '<input type="button" id="selectPic" onclick="selectPicture(\'' + data.items[j].itemID + '\');" value="Select Picture from Library" /><br/>' +
+        '<input type="button" id="upload_btn" onclick="uploadPicture(\'' + data.items[j].itemID + '\');" value="Upload Picture" />' +
+        	'<div>' +
+			'<h3>Camera:</h3>' +
+			'<b>Status:</b><span id="camera_status"></span><br>' +
+       		 '<b>Image:</b><img style="width:120px;visibility:hidden;display:none;" id="camera_image" src="" />' +
+			'</div>';
+		} 
+		$('index.html#details').page('refresh');
+	});
+}
+
+function getOneR(artistID) {
+	$.getJSON("http://www.airhorndesign.com/m_igotdibs/getOne.php?rid="+artistID, function(data){ 
+		document.getElementById('item-feedback').innerHTML = '';
+		for(var i=0;i<data.records.length;i++){
+			document.getElementById('item-feedback').innerHTML = '<h2>' + data.records[i].artist + ' - ' + data.records[i].album + '</h2><p><strong>Genre: </strong>' + data.records[i].genre + '</p><p><strong>Label: </strong>' + data.records[i].label + '</p><p><strong>Year: </strong>' + data.records[i].year + '</p><p><strong>Format: </strong>' + data.records[i].format + '</p><p><strong>Additional: </strong>' + data.records[i].additional + '</p><p><strong>Price: </strong>' + data.records[i].price + '</p>';
+		}
+		for(var g=0;g<data.images.length;g++){
+			document.getElementById('item-feedback').innerHTML += '<p><img src="http://airhorndesign.com/igotdibs/items/'  + data.images[g].imagesfull + '" /></p>';
+		}
+		$('index.html#details').page('refresh');
+	});
 }
 
 
