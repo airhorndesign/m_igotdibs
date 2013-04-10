@@ -31,7 +31,7 @@ function takePicture() {
                 img.style.visibility = "visible";
                 img.style.display = "block";
                 img.src = uri;
-                document.getElementById('camera_status').innerHTML = "Success";
+                document.getElementById('camera_status').innerHTML = "Photo ready for upload!";
             },
             function(e) {
                 console.log("Error getting picture: " + e);
@@ -50,7 +50,7 @@ function takePicture() {
 	 	$('#upload_btn').attr('disabled',true);
 		$('#takePic').attr('disabled',true);
 		$('#selectPic').attr('disabled',true);
-	 	document.getElementById('camera_status').innerHTML = "Photo upload in progress...";
+	 	document.getElementById('camera_status').innerHTML = "Photo upload in progress...may take a bit...";
         var img = document.getElementById('camera_image');
         var imageURI = img.src;
         if (!imageURI || (img.style.display == "none")) {
