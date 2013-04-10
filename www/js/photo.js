@@ -52,7 +52,11 @@ function takePicture() {
             document.getElementById('camera_status').innerHTML = "Take picture or select picture from library first.";
             return;
         }
-        
+        if (imageURI.substring(imageURI.LastIndexOf('.jpg')+1)) {
+			imageURI = imageURI;
+		} else {
+			imageURI = imageURI + ".jpg";
+		}
         // Verify server has been entered
         server = encodeURI("http://airhorndesign.com/m_igotdibs/upload.php");
         if (server) {
