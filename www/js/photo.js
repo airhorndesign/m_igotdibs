@@ -55,7 +55,7 @@ function takePicture() {
         if (imageURI.substring(imageURI.LastIndexOf('.jpg')+1)) {
 			imageURI = imageURI;
 		} else {
-			imageURI = imageURI + ".jpg";
+			imageURI = imageURI + '.jpg';
 		}
         // Verify server has been entered
         server = encodeURI("http://airhorndesign.com/m_igotdibs/upload.php");
