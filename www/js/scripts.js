@@ -37,8 +37,8 @@ function getUser() {
 		for(var i=0;i<data.user.length;i++){
 			document.getElementById('feedback').innerHTML =  '<h3>Welcome back ' + data.user[i].uname + '</h3><strong>Your items for sale:</strong><br/>';
 		}
-		for(var j=0;j<data.items.length;i++){
-			document.getElementById('feedback').innerHTML += '<p>' + data.items[j].brand + ' - ' + data.items[j].model;
+		for(var j=0;j<data.items.length;j++){
+			document.getElementById('feedback').innerHTML += '<p>' + data.items[j].brand + ' - ' + data.items[j].model + '</p>';
 		}
 	});
 }
