@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.airhorndesign.table-source"
+        id        = "com.airhorndesign.i-got-gibs"
         version   = "2.2.0">
     <name>The Table Source</name>
 
     <description>
-        The Table Source is your one-stop shop for all things DJ.
+        I Got Dibs is a marketplace for DJs and record collectors. This app allows users to upload photos wirelessly to their items for sale on the website.
     </description>
 
     <author href="http://www.airhorndesign.com" email="travis@airhorndesign.com">
@@ -20,7 +20,7 @@
 	<feature name="http://api.phonegap.com/1.0/notification"/>
 
     <preference name="phonegap-version" value="2.2.0" />
-    <preference name="orientation"      value="default" />
+    <preference name="orientation"      value="portrait" />
     <preference name="target-device"    value="universal" />
     <preference name="fullscreen"       value="false" />
 
