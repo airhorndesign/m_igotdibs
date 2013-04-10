@@ -40,13 +40,24 @@
     	<h1>I Got Dibs - Welcome</h1>
     </div> <!-- end of header -->
     <div data-role="content">
-    	<div id="uploaded">
-        </div>
         <div id="feedback">
         </div>
+    </div> <!-- end of content -->
+</div> <!-- END OF MAIN PAGE -->
+
+<div data-role="page" id="details">
+	<div data-role="header">
+    	<h1>I Got Dibs - Item details</h1>
+        <a href="#" data-role="button" data-rel="back" data-transition="fade">Back</a>
+    </div> <!-- end of header -->
+    <div data-role="content">
+    	<div id="uploaded">
+        </div>
+        <!--<div id="feedback">
+        </div>-->
         <!-- Camera -->
-        <input type="button" onclick="takePicture();" value="Take Picture" /><br/>
-        <input type="button" onclick="selectPicture();" value="Select Picture from Library" /><br/>
+        <input type="button" id="takePic" onclick="takePicture();" value="Take Picture" /><br/>
+        <input type="button" id="selectPic" onclick="selectPicture();" value="Select Picture from Library" /><br/>
         <input type="button" id="upload_btn" onclick="uploadPicture();" value="Upload Picture" />
         	<div>
 			<h3>Camera:</h3>
@@ -54,7 +65,6 @@
        		 <b>Image:</b> <img style="width:120px;visibility:hidden;display:none;" id="camera_image" src="" />
 			</div>
     </div> <!-- end of content -->
-</div> <!-- END OF LOGIN PAGE -->
-
+</div> <!-- END OF Details PAGE -->
 </body>
 </html>

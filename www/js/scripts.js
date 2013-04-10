@@ -35,7 +35,10 @@ function getUser() {
 	var userId = localStorage.getItem('UserID');
 	$.getJSON("http://www.airhorndesign.com/m_igotdibs/getUser.php?id="+userId, function(data){ 
 		for(var i=0;i<data.user.length;i++){
-			document.getElementById('feedback').innerHTML =  '<h3>Welcome back ' + data.user[i].uname + '</h3>';
+			document.getElementById('feedback').innerHTML =  '<h3>Welcome back ' + data.user[i].uname + '</h3><strong>Your items for sale:</strong><br/>';
+		}
+		for(var j=0;j<data.items.length;i++){
+			document.getElementById('feedback').innerHTML += '<p>' + data.items[j].brand + ' - ' + data.items[j].model;
 		}
 	});
 }

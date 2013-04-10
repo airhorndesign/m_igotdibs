@@ -47,6 +47,10 @@ function takePicture() {
     function uploadPicture() {
     
      // Get URI of picture to upload
+	 	$('#upload_btn').attr('disabled',true);
+		$('#takePic').attr('disabled',true);
+		$('#selectPic').attr('disabled',true);
+	 	document.getElementById('camera_status').innerHTML = "Photo upload in progress...";
         var img = document.getElementById('camera_image');
         var imageURI = img.src;
         if (!imageURI || (img.style.display == "none")) {
@@ -81,6 +85,10 @@ function takePicture() {
 	function uploadSelectedPicture() {
     
      // Get URI of picture to upload
+	 	$('#upload_btn').attr('disabled',true);
+		$('#takePic').attr('disabled',true);
+		$('#selectPic').attr('disabled',true);
+		document.getElementById('camera_status').innerHTML = "Photo upload in progress...";
         var img = document.getElementById('camera_image');
         var imageURI = img.src;
         if (!imageURI || (img.style.display == "none")) {
