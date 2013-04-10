@@ -35,16 +35,18 @@ function getUser() {
 	var userId = localStorage.getItem('UserID');
 	$.getJSON("http://www.airhorndesign.com/m_igotdibs/getUser.php?id="+userId, function(data){ 
 		for(var i=0;i<data.user.length;i++){
-			document.getElementById('feedback').innerHTML =  '<h3>Welcome back ' + data.user[i].uname + '</h3><strong>Your items for sale:</strong><br/>';
+			document.getElementById('feedback').innerHTML =  '<h3>Welcome back ' + data.user[i].uname + '</h3>';
 		}
 		for(var j=0;j<data.items.length;j++){
-			document.getElementById('feedback').innerHTML += '<p>' + data.items[j].brand + ' - ' + data.items[j].model + '</p>';
+			document.getElementById('itemlist').innerHTML += '<li><a href="#details" onClick="getOne(\'' + data.items[j].itemID + '\');" data-icon="arrow-r" data-transition="slide"><p>' + data.items[j].brand + ' - ' + data.items[j].model + '</p></a></li>';
 		}
-		document.getElementById('feedback').innerHTML += '<br/><strong>Your records for sale:</strong><br/>';
 		for(var h=0;h<data.records.length;h++){
-			document.getElementById('feedback').innerHTML += '<p>' + data.records[h].artist + ' - ' + data.records[h].album + '</p>';
+			document.getElementById('recordlist').innerHTML += '<li>' + data.records[h].artist + ' - ' + data.records[h].album + '</li>';
 		}
 	});
+}
+
+function getOne() {
 }
 
 
