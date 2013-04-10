@@ -38,11 +38,13 @@ function getUser() {
 			document.getElementById('feedback').innerHTML =  '<h3>Welcome back ' + data.user[i].uname + '</h3>';
 		}
 		for(var j=0;j<data.items.length;j++){
-			document.getElementById('itemlist').innerHTML += '<li><a href="#details" onClick="getOne(\'' + data.items[j].itemID + '\');" data-icon="arrow-r" data-transition="slide"><p>' + data.items[j].brand + ' - ' + data.items[j].model + '</p></a></li>';
+			document.getElementById('itemlist').innerHTML += '<li><a href="#details" onClick="getOne(\'' + data.items[j].itemID + '\');" data-icon="arrow-r" data-transition="slide"><img src="http://airhorndesign.com/igotdibs/items/' + data.items[j].image + '" /><p>' + data.items[j].brand + ' - ' + data.items[j].model + '</p></a></li>';
 		}
 		for(var h=0;h<data.records.length;h++){
-			document.getElementById('recordlist').innerHTML += '<li>' + data.records[h].artist + ' - ' + data.records[h].album + '</li>';
+			document.getElementById('recordlist').innerHTML += '<li><a href="#details" onClick="getOne(\'' + data.records[h].artistID + '\');" data-icon="arrow-r" data-transition="slide"><p>' + data.records[h].artist + ' - ' + data.records[h].album + '</p></a></li>';
 		}
+		$('#itemlist').listview('refresh');	
+		$('#recordlist').listview('refresh');
 	});
 }
 
