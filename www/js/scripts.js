@@ -41,7 +41,7 @@ function getUser() {
 			document.getElementById('feedback').innerHTML += '<p>' + data.items[j].brand + ' - ' + data.items[j].model + '</p>';
 		}
 		document.getElementById('feedback').innerHTML += '<br/><strong>Your records for sale:</strong><br/>';
-		for(var h=0;j<data.records.length;h++){
+		for(var h=0;h<data.records.length;h++){
 			document.getElementById('feedback').innerHTML += '<p>' + data.records[h].artist + ' - ' + data.records[h].album + '</p>';
 		}
 	});
