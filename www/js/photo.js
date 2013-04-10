@@ -30,7 +30,7 @@ function takePicture() {
                 var img = document.getElementById('camera_image');
                 img.style.visibility = "visible";
                 img.style.display = "block";
-                img.src = uri + ".jpg";
+                img.src = uri;
                 document.getElementById('camera_status').innerHTML = "Success";
             },
             function(e) {
