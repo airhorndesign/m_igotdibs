@@ -82,7 +82,7 @@ function takePicture() {
     }
 	
 	
-	function uploadSelectedPicture() {
+	function uploadSelectedPicture(pic) {
     
      // Get URI of picture to upload
 	 	$('#upload_btn').attr('disabled',true);
