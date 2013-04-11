@@ -17,7 +17,7 @@ function takePicture() {
                 console.log("Error getting picture: " + e);
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
-            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI,encodingType: navigator.camera.EncodingType.JPEG, correctOrientation: true });
+            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI,encodingType: navigator.camera.EncodingType.JPEG });
     };
 
 
