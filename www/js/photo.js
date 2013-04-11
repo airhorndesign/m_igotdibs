@@ -11,7 +11,7 @@ function takePicture() {
                 img.style.visibility = "visible";
                 img.style.display = "block";
                 img.src = uri;
-                document.getElementById('camera_status').innerHTML = "Success";
+                document.getElementById('camera_status').innerHTML = "Photo ready for upload!";
             },
             function(e) {
                 console.log("Error getting picture: " + e);
@@ -38,7 +38,7 @@ function takePicture() {
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
             { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM, encodingType: navigator.camera.EncodingType.JPEG});
-		$('#upload_btn').attr('onclick','uploadSelectedPicture('+pic+');');
+		$('#upload_btn').attr('onclick','uploadSelectedPicture(\''+pic+'\');');
     };
     
     /**
