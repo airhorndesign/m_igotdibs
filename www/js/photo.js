@@ -74,7 +74,7 @@ function takePicture() {
             ft.upload(imageURI, server, function(r) {
                 
             	$.mobile.changePage('index.html#main', { transition: 'none'} );
-				document.getElementById('uploaded').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded to" + server ;
+				document.getElementById('uploaded').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded to";
 			}, function(error) {
                 document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
             }, options);
@@ -88,7 +88,7 @@ function takePicture() {
 	 	$('#upload_btn').attr('disabled',true);
 		$('#takePic').attr('disabled',true);
 		$('#selectPic').attr('disabled',true);
-		document.getElementById('camera_status').innerHTML = "Photo upload in progress...";
+		document.getElementById('camera_status').innerHTML = "Photo upload in progress...may take a bit...";
         var img = document.getElementById('camera_image');
         var imageURI = img.src;
         if (!imageURI || (img.style.display == "none")) {
@@ -97,7 +97,7 @@ function takePicture() {
         }
 
         // Verify server has been entered
-        server = encodeURI("http://airhorndesign.com/m_igotdibs/upload.php");
+        server = encodeURI("http://airhorndesign.com/igotdibs/addimagesMobile.php?id="+pic);
         if (server) {
         
             // Specify transfer options
