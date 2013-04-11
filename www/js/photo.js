@@ -74,7 +74,7 @@ function takePicture() {
             ft.upload(imageURI, server, function(r) {
                 
             	$.mobile.changePage('index.html#main', { transition: 'none'} );
-				document.getElementById('uploaded').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded to";
+				document.getElementById('uploaded').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded";
 			}, function(error) {
                 document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
             }, options);
@@ -112,7 +112,7 @@ function takePicture() {
             ft.upload(imageURI, server, function(r) {
                 
             	$.mobile.changePage('index.html#main', { transition: 'none'} );
-				document.getElementById('uploaded').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded.";
+				document.getElementById('uploaded').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded." + server + imageURI;
 			}, function(error) {
                 document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
             }, options);
