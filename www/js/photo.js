@@ -40,7 +40,7 @@ function takePicture() {
                 console.log("Error getting picture: " + e);
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
-            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM, encodingType: navigator.camera.EncodingType.JPEG});
+            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM, encodingType: navigator.camera.EncodingType.JPEG, targetWidth: 500, targetHeight: 500, correctOrientation:true});
 			$('#upload_btn').attr('onclick','uploadSelectedPicture(\''+pic+'\');');
     };
     
