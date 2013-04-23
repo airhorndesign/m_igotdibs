@@ -12,6 +12,7 @@ function takePicture() {
                 img.style.display = "block";
                 img.src = uri;
                 document.getElementById('camera_status').innerHTML = "Photo ready for upload!";
+				$('#upload_btn').attr('disabled',false);
             },
             function(e) {
                 console.log("Error getting picture: " + e);
@@ -48,7 +49,7 @@ function takePicture() {
     function uploadPicture(pic) {
     
      // Get URI of picture to upload
-	 	$('#upload_btn').attr('disabled',false);
+	 	$('#upload_btn').attr('disabled',true);
 		$('#takePic').attr('disabled',true);
 		$('#selectPic').attr('disabled',true);
 	 	document.getElementById('camera_status').innerHTML = "Photo upload in progress...may take a bit...";
