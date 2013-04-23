@@ -17,7 +17,8 @@ function takePicture() {
                 console.log("Error getting picture: " + e);
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
-            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI,encodingType: navigator.camera.EncodingType.JPEG });
+            { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI,encodingType: navigator.camera.EncodingType.JPEG,targetWidth: 500, targetHeight: 500
+ });
     };
 
 
@@ -47,7 +48,7 @@ function takePicture() {
     function uploadPicture(pic) {
     
      // Get URI of picture to upload
-	 	$('#upload_btn').attr('disabled',true);
+	 	$('#upload_btn').attr('disabled',false);
 		$('#takePic').attr('disabled',true);
 		$('#selectPic').attr('disabled',true);
 	 	document.getElementById('camera_status').innerHTML = "Photo upload in progress...may take a bit...";

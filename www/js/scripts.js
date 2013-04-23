@@ -60,7 +60,7 @@ function getOne(itemID) {
 		for(var j=0;j<data.items.length;j++){
 			document.getElementById('item-feedback').innerHTML += '<input type="button" id="takePic" onclick="takePicture();" value="Take Picture" /><br/>' +
         '<input type="button" id="selectPic" onclick="selectPicture(\'' + data.items[j].itemID + '\');" value="Select Picture from Library" /><br/>' +
-        '<input type="button" id="upload_btn" onclick="uploadPicture(\'' + data.items[j].itemID + '\');" value="Upload Picture" />' +
+        '<input type="button" id="upload_btn" disabled="disabled" onclick="uploadPicture(\'' + data.items[j].itemID + '\');" value="Upload Picture" />' +
         	'<div>' +
 			'<h3>Camera:</h3>' +
 			'<b>Status:</b><span id="camera_status"></span><br>' +
