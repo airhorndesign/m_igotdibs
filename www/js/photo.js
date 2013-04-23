@@ -41,7 +41,7 @@ function takePicture() {
                 document.getElementById('camera_status').innerHTML = "Error getting picture.";
             },
             { quality: 50, destinationType: navigator.camera.DestinationType.FILE_URI, sourceType: navigator.camera.PictureSourceType.SAVEDPHOTOALBUM, encodingType: navigator.camera.EncodingType.JPEG, targetWidth: 500, targetHeight: 500, correctOrientation:true});
-		$('#upload_btn').attr('onclick','uploadSelectedPicture(\''+pic+'\');');
+			//$('#upload_btn').attr('onclick','uploadSelectedPicture(\''+pic+'\');');
     };
     
     /**
@@ -106,7 +106,7 @@ function takePicture() {
             // Specify transfer options
             var options = new FileUploadOptions();
             options.fileKey="file";
-            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1) + '.jpg';
+            options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
             options.mimeType="image/jpeg";
             options.chunkedMode = false;
 
