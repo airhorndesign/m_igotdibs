@@ -80,6 +80,15 @@ function getOneR(artistID) {
 		for(var g=0;g<data.images.length;g++){
 			document.getElementById('item-feedback').innerHTML += '<p><img src="http://airhorndesign.com/igotdibs/items/'  + data.images[g].imagesfull + '" /></p>';
 		}
+		for(var i=0;i<data.records.length;i++){
+			document.getElementById('item-feedback').innerHTML += '<input type="button" id="takePic" onclick="takeRecordPicture();" value="Take Picture" /><br/>' +
+        '<input type="button" id="upload_btn" disabled="disabled" onclick="uploadRecordPicture(\'' + data.records[i].artistID + '\');" value="Upload Picture" />' +
+        	'<div>' +
+			'<h3>Camera:</h3>' +
+			'<b>Status:</b><span id="camera_status"></span><br>' +
+       		 '<b>Image:</b><img style="width:120px;visibility:hidden;display:none;" id="camera_image" src="" />' +
+			'</div>';
+		} 
 		$('index.html#details').page('refresh');
 	});
 }
