@@ -79,7 +79,22 @@ function takePicture() {
             	$.mobile.changePage('index.html#main', { transition: 'none'} );
 				document.getElementById('uploaded').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded";
 			}, function(error) {
-                document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
+                //document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
+					ft.upload(imageURI, server, function(r) {
+                
+					$.mobile.changePage('index.html#main', { transition: 'none'} );
+					document.getElementById('uploaded').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded";
+				}, function(error) {
+					//document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
+						ft.upload(imageURI, server, function(r) {
+                
+						$.mobile.changePage('index.html#main', { transition: 'none'} );
+						document.getElementById('uploaded').innerHTML = "Upload successful: "+r.bytesSent+" bytes uploaded";
+					}, function(error) {
+						document.getElementById('camera_status').innerHTML = "It's really not working = "+error.code;
+						
+					}, options, true);
+				}, options, true);
             }, options, true);
         }
     }
