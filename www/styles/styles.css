@@ -10,6 +10,9 @@ img, embed, object, video
 	max-width: 100%;
 }
 
+.ui-field-contain input.ui-input-text {
+    border-radius: 0.2em 0.2em 0.2em 0.2em;
+}
 
 @media screen and (max-width: 885px) {
 

@@ -35,7 +35,7 @@ function getUser() {
 	var userId = localStorage.getItem('UserID');
 	$.getJSON("http://www.airhorndesign.com/m_igotdibs/getUser.php?id="+userId, function(data){ 
 		for(var i=0;i<data.user.length;i++){
-			document.getElementById('feedback').innerHTML =  '<h3>Welcome back ' + data.user[i].uname + '</h3>';
+			document.getElementById('feedback').innerHTML =  '<h3>Welcome back ' + data.user[i].uname + '</h3><p>Navigate to the item you would like to upload a photo to. If your item does not appear it hasn\'t been approved yet - wait for the confirmation email and then try this again';
 		}
 		for(var j=0;j<data.items.length;j++){
 			document.getElementById('itemlist').innerHTML += '<li><a href="#details" onClick="getOne(\'' + data.items[j].itemID + '\');" data-icon="arrow-r" data-transition="slide"><img src="http://airhorndesign.com/igotdibs/items/' + data.items[j].image + '" /><p>' + data.items[j].brand + '</p><p>' + data.items[j].model + '</p></a></li>';
@@ -58,9 +58,8 @@ function getOne(itemID) {
 			document.getElementById('item-feedback').innerHTML += '<p><img src="http://airhorndesign.com/igotdibs/items/'  + data.images[h].imagesfull + '" /></p>';
 		}
 		for(var j=0;j<data.items.length;j++){
-			document.getElementById('item-feedback').innerHTML += '<input type="button" id="takePic" onclick="takePicture();" value="Take Picture" /><br/>' +
-        '<input type="button" id="selectPic" onclick="selectPicture(\'' + data.items[j].itemID + '\');" value="Select Picture from Library" /><br/>' +
-        '<input type="button" id="upload_btn" disabled="disabled" onclick="uploadPicture(\'' + data.items[j].itemID + '\');" value="Upload Picture" />' +
+			document.getElementById('item-feedback').innerHTML += '<input data-role="button" id="takePic" onclick="takePicture();" value="Take Picture" /><br/>' +
+        '<input data-role="button" id="upload_btn" disabled="disabled" onclick="uploadPicture(\'' + data.items[j].itemID + '\');" value="Upload Picture" />' +
         	'<div>' +
 			'<h3>Camera:</h3>' +
 			'<b>Status:</b><span id="camera_status"></span><br>' +
@@ -81,8 +80,8 @@ function getOneR(artistID) {
 			document.getElementById('item-feedback').innerHTML += '<p><img src="http://airhorndesign.com/igotdibs/items/'  + data.images[g].imagesfull + '" /></p>';
 		}
 		for(var i=0;i<data.records.length;i++){
-			document.getElementById('item-feedback').innerHTML += '<input type="button" id="takePic" onclick="takeRecordPicture();" value="Take Picture" /><br/>' +
-        '<input type="button" id="upload_btn" disabled="disabled" onclick="uploadRecordPicture(\'' + data.records[i].artistID + '\');" value="Upload Picture" />' +
+			document.getElementById('item-feedback').innerHTML += '<input data-role="button" id="takePic" onclick="takeRecordPicture();" value="Take Picture" /><br/>' +
+        '<input data-role="button" id="upload_btn" disabled="disabled" onclick="uploadRecordPicture(\'' + data.records[i].artistID + '\');" value="Upload Picture" />' +
         	'<div>' +
 			'<h3>Camera:</h3>' +
 			'<b>Status:</b><span id="camera_status"></span><br>' +

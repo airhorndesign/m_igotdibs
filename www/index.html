@@ -16,15 +16,15 @@
 </head>
 <body>
 <div data-role="page" id="login">
-	<div data-role="header">
+	<div data-role="header" >
     	<h1>I Got Dibs</h1>
     </div> <!-- end of header -->
-    <div data-role="content">
+    <div data-role="content" >
     <form action="#" data-ajax="false" onsubmit="return loginForm(this)">
     	<fieldset>
-           <div data-role="fieldcontain">
+           <div data-role="fieldcontain" >
            		<label for="username">Username:</label>
-                <input type="text" name="username"  /><br/>
+                <input type="text" id="username" name="username"  /><br/>
                 <label for="password">Password:</label>
                 <input type="password" name="password"  />
                 <br/>
@@ -38,18 +38,26 @@
 <div data-role="page" id="main">
 	<div data-role="header">
     	<h1>I Got Dibs - Welcome</h1>
+        <a href="#" data-role="button" data-rel="back" data-transition="fade">Back</a>
     </div> <!-- end of header -->
     <div data-role="content">
         <div id="feedback">
         </div>
         <div id="uploaded">
         </div>
-        <strong>Items for sale</strong>
-        <ul id="itemlist" data-role="listview" data-inset="true">
-        </ul>
-        <strong>Records for sale</strong>
-        <ul id="recordlist" data-role="listview" data-inset="true">
-        </ul>
+        <div data-role="collapsible-set" data-inset="true" >
+        	<div data-role="collapsible" data-collapsed="false">
+        		<h3>Items for sale</h3>
+                
+        		<ul id="itemlist" data-role="listview" data-inset="true">
+        		</ul>
+            </div>
+            <div data-role="collapsible" data-collapsed="false"  >
+        		<h3>Records for sale</h3>
+                <ul id="recordlist" data-role="listview" data-inset="true"  >
+                </ul>
+            </div>
+        </div>
     </div> <!-- end of content -->
 </div> <!-- END OF MAIN PAGE -->
 

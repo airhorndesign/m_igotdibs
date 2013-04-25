@@ -43,7 +43,7 @@ function takeRecordPicture() {
 
     /**
 * Select picture from library ITEMSS
-*/
+
     function selectPicture(pic) {
         navigator.camera.getPicture(
             function(uri) {
@@ -169,7 +169,7 @@ function uploadRecordPicture(pic) {
             }, options, true);
         }
     }
-	
+/*	
 	function uploadSelectedPicture(pic) {
     
      // Get URI of picture to upload
@@ -205,4 +205,4 @@ function uploadRecordPicture(pic) {
                 document.getElementById('camera_status').innerHTML = "Upload failed: Code = "+error.code;
             }, options, true);
         }
-    }
+    }*/
