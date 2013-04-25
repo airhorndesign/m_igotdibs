@@ -58,8 +58,8 @@ function getOne(itemID) {
 			document.getElementById('item-feedback').innerHTML += '<p><img src="http://airhorndesign.com/igotdibs/items/'  + data.images[h].imagesfull + '" /></p>';
 		}
 		for(var j=0;j<data.items.length;j++){
-			document.getElementById('item-feedback').innerHTML += '<input data-role="button" id="takePic" onclick="takePicture();" value="Take Picture" /><br/>' +
-        '<input data-role="button" id="upload_btn" disabled="disabled" onclick="uploadPicture(\'' + data.items[j].itemID + '\');" value="Upload Picture" />' +
+			document.getElementById('item-feedback').innerHTML += '<input data-role="button" type="button" id="takePic" onclick="takePicture();" value="Take Picture" /><br/>' +
+        '<input data-role="button" type="button" id="upload_btn" disabled="disabled" onclick="uploadPicture(\'' + data.items[j].itemID + '\');" value="Upload Picture" />' +
         	'<div>' +
 			'<h3>Camera:</h3>' +
 			'<b>Status:</b><span id="camera_status"></span><br>' +
@@ -80,8 +80,8 @@ function getOneR(artistID) {
 			document.getElementById('item-feedback').innerHTML += '<p><img src="http://airhorndesign.com/igotdibs/items/'  + data.images[g].imagesfull + '" /></p>';
 		}
 		for(var i=0;i<data.records.length;i++){
-			document.getElementById('item-feedback').innerHTML += '<input data-role="button" id="takePic" onclick="takeRecordPicture();" value="Take Picture" /><br/>' +
-        '<input data-role="button" id="upload_btn" disabled="disabled" onclick="uploadRecordPicture(\'' + data.records[i].artistID + '\');" value="Upload Picture" />' +
+			document.getElementById('item-feedback').innerHTML += '<input data-role="button" type="button" id="takePic" onclick="takeRecordPicture();" value="Take Picture" /><br/>' +
+        '<input data-role="button" type="button" id="upload_btn" disabled="disabled" onclick="uploadRecordPicture(\'' + data.records[i].artistID + '\');" value="Upload Picture" />' +
         	'<div>' +
 			'<h3>Camera:</h3>' +
 			'<b>Status:</b><span id="camera_status"></span><br>' +
