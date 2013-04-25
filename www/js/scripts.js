@@ -32,6 +32,8 @@ if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
 }
 
 function getUser() {
+	document.getElementById('itemlist').innerHTML = '';
+	document.getElementById('recordlist').innerHTML = '';
 	var userId = localStorage.getItem('UserID');
 	$.getJSON("http://www.airhorndesign.com/m_igotdibs/getUser.php?id="+userId, function(data){ 
 		for(var i=0;i<data.user.length;i++){
